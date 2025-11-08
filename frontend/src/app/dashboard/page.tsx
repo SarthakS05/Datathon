@@ -15,14 +15,14 @@ export default function DashboardPage() {
   const links = [
     {
       label: "Dashboard",
-      href: "#",
+      href: "/dashboard",
       icon: (
         <IconBrandTabler className="h-5 w-5 shrink-0 text-white" />
       ),
     },
     {
       label: "Metrics",
-      href: "#",
+      href: "/metrics",
       icon: (
         <IconUserBolt className="h-5 w-5 shrink-0 text-white" />
       ),
@@ -89,4 +89,4 @@ export const LogoIcon = () => {
   );
 };
 
-// Dummy dashboard component with content
+

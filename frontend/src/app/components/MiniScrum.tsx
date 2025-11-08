@@ -35,21 +35,21 @@ const Board = () => {
       <Column
         title="TODO"
         column="todo"
-        headingColor="text-yellow-200"
+        headingColor="text-red-400"
         cards={cards}
         setCards={setCards}
       />
       <Column
         title="In progress"
         column="doing"
-        headingColor="text-blue-200"
+        headingColor="text-orange-400"
         cards={cards}
         setCards={setCards}
       />
       <Column
         title="Complete"
         column="done"
-        headingColor="text-emerald-200"
+        headingColor="text-yellow-400"
         cards={cards}
         setCards={setCards}
       />

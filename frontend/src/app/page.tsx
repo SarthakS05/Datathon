@@ -1,6 +1,7 @@
 import React from 'react';
 import GradientBackground from './components/GradientBars';
 import { Magnetic } from './components/MagneticButton';
+import Link from 'next/link';
 
 export default function Page() {
 	return (
@@ -20,10 +21,10 @@ export default function Page() {
 					{/* add extra vertical spacing between text and button */}
 					<div className="mt-6">
 						<Magnetic intensity={0.6} range={120} actionArea="self">
-							<button
-								style={{ backgroundColor: 'black' }}
-								className="bg-black hover:bg-black active:bg-black text-white px-6 py-3 rounded-md shadow-md focus:outline-none flex items-center gap-2"
+							<Link
+								href="/dashboard"
 								aria-label="Go to Dashboard"
+								className="inline-flex items-center gap-2 bg-black hover:bg-black active:bg-black text-white px-6 py-3 rounded-md shadow-md focus:outline-none"
 							>
 								<span>Dashboard</span>
 								<svg
@@ -35,7 +36,7 @@ export default function Page() {
 								>
 									<path fillRule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L13.586 11H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clipRule="evenodd" />
 								</svg>
-							</button>
+							</Link>
 						</Magnetic>
 					</div>
 			</div>

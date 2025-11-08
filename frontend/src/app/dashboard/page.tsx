@@ -62,7 +62,7 @@ export default function DashboardPage() {
         </SidebarBody>
       </Sidebar>
 
-      <main className="flex-1 overflow-hidden">
+      <main className="flex-1 overflow-hidden bg-black">
         <Kanban />
       </main>
     </div>

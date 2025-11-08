@@ -1,18 +1,55 @@
 "use client";
 import React, { useState } from 'react';
-import { Sidebar, SidebarBody, SidebarLink } from '../components/SideBar';
-import Overview from '../components/overview';
-import ExpenseReport from '../components/ExpenseReport';
+import GradientBackground from '../components/GradientBars';
+import InventoryChart from '../components/dashboard/InventoryChart';
+import IngredientInsights from '../components/dashboard/IngredientInsights';
+import PredictiveForecast from '../components/dashboard/PredictiveForecast';
+import { Sidebar, SidebarBody, SidebarLink } from "../components/SideBar";
 import {
-  IconChartBar,
-  IconClipboardList,
-  IconChevronLeft,
-  IconBrandTabler,
-  IconUserBolt,
-  IconSettings,
   IconArrowLeft,
-} from '@tabler/icons-react';
+  IconBrandTabler,
+  IconSettings,
+  IconUserBolt,
+} from "@tabler/icons-react";
 import { cn } from '../lib/utils';
+
+// Sample data - replace with real data from your backend
+const inventoryData = [
+  { name: 'Rice', quantity: 150, unit: 'kg', reorderPoint: 100 },
+  { name: 'Soy Sauce', quantity: 20, unit: 'L', reorderPoint: 30 },
+  { name: 'Chicken', quantity: 45, unit: 'kg', reorderPoint: 50 },
+  { name: 'Vegetables', quantity: 25, unit: 'kg', reorderPoint: 30 },
+];
+
+const ingredientUsageData = [
+  { name: 'Rice', usageCount: 450, trend: 'up' as const, percentage: 15 },
+  { name: 'Chicken', usageCount: 320, trend: 'stable' as const, percentage: 0 },
+  { name: 'Soy Sauce', usageCount: 200, trend: 'down' as const, percentage: -5 },
+  { name: 'Vegetables', usageCount: 280, trend: 'up' as const, percentage: 8 },
+];
+
+const forecastData = [
+  {
+    date: 'Tomorrow',
+    expectedOrders: 120,
+    predictedIngredients: [
+      { name: 'Rice', amount: 25, unit: 'kg' },
+      { name: 'Chicken', amount: 15, unit: 'kg' },
+      { name: 'Soy Sauce', amount: 3, unit: 'L' },
+      { name: 'Vegetables', amount: 8, unit: 'kg' },
+    ],
+  },
+  {
+    date: 'Next Week',
+    expectedOrders: 850,
+    predictedIngredients: [
+      { name: 'Rice', amount: 175, unit: 'kg' },
+      { name: 'Chicken', amount: 105, unit: 'kg' },
+      { name: 'Soy Sauce', amount: 21, unit: 'L' },
+      { name: 'Vegetables', amount: 56, unit: 'kg' },
+    ],
+  },
+];
 
 export default function MetricsPage() {
   const links = [
@@ -47,12 +84,10 @@ export default function MetricsPage() {
   ];
   const [open, setOpen] = useState(false);
   return (
-    <div
-      className={cn(
+    <div className={cn(
         "flex w-full flex-1 flex-col overflow-hidden bg-black md:flex-row",
         "h-screen",
-      )}
-    >
+      )}>
       <Sidebar open={open} setOpen={setOpen}>
         <SidebarBody className="justify-between gap-10">
           <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
@@ -65,36 +100,24 @@ export default function MetricsPage() {
         </SidebarBody>
       </Sidebar>
 
-
-      <main className="flex-1 overflow-auto p-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2">
-            <Overview />
-            <div className="mt-6">
-              <ExpenseReport />
+      <main className="flex-1 overflow-auto">
+        <div className="w-full max-w-7xl mx-auto p-6">
+          <div className="mb-8">
+            <h1 className="text-4xl font-bold text-white">Restaurant Analytics</h1>
+            <p className="text-gray-400 mt-2">Real-time insights and predictions</p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="lg:col-span-1">
+              <InventoryChart data={inventoryData} />
+            </div>
+            <div className="lg:col-span-1">
+              <IngredientInsights data={ingredientUsageData} />
+            </div>
+            <div className="lg:col-span-1">
+              <PredictiveForecast data={forecastData} />
             </div>
           </div>
-
-          <aside className="space-y-6">
-            {/* Additional bento items: top ingredients, cost breakdown, quick actions */}
-            <div className="p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/6">
-              <h3 className="text-sm font-semibold mb-2">Top Ingredients</h3>
-              <ul className="text-sm space-y-1 text-neutral-200">
-                <li>Gochujang — 12kg / week</li>
-                <li>Yuzu — 2.5L / month</li>
-                <li>Bonito Flakes — 8kg / month</li>
-              </ul>
-            </div>
-
-            <div className="p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/6">
-              <h3 className="text-sm font-semibold mb-2">Cost Breakdown</h3>
-              <div className="text-sm text-neutral-200">
-                <div className="flex justify-between"><span>Ingredients</span><span>$5,420</span></div>
-                <div className="flex justify-between"><span>Labor</span><span>$3,120</span></div>
-                <div className="flex justify-between"><span>Rent</span><span>$2,000</span></div>
-              </div>
-            </div>
-          </aside>
         </div>
       </main>
     </div>

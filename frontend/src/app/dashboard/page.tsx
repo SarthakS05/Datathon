@@ -9,6 +9,7 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import { cn } from "../lib/utils";
+import { Kanban } from "../components/MiniScrum";
 
 export default function DashboardPage() {
   const links = [
@@ -52,17 +53,18 @@ export default function DashboardPage() {
       <Sidebar open={open} setOpen={setOpen}>
         <SidebarBody className="justify-between gap-10">
           <div className="flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
-
             <div className="mt-8 flex flex-col gap-2">
               {links.map((link, idx) => (
                 <SidebarLink key={idx} link={link} />
               ))}
             </div>
           </div>
-          <div>
-          </div>
         </SidebarBody>
       </Sidebar>
+
+      <main className="flex-1 overflow-hidden">
+        <Kanban />
+      </main>
     </div>
   );
 }

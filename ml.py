@@ -6,7 +6,7 @@ df= pd.DataFrame()
 def update():
     a = pd.DataFrame()
     for i in ["May", "June", "July", "August", "September", "October"]:
-        df = pd.read_excel(f"mai-shen-yun/{i}_Data_Matrix (1).xlsx")
+        df = pd.read_excel(f"data/matrices/{i}_Data_Matrix (1).csv")
         df["month"] = i
         a = pd.concat([a,df])
     

@@ -1,0 +1,39 @@
+,source_page,source_table,Group,Count,Amount,month,Category
+0,1,1,Lunch Menu,269,"$3,783.26",May,
+1,1,1,Open Food,2,$4.52,May,
+2,1,1,All Day Menu,"8,464","$61,296.15",May,
+0,1,1,Lunch Menu,222,"$3,089.08",June,
+1,1,1,All Day Menu,"5,415","$39,433.25",June,
+2,1,1,Open Food,1,$5.00,June,
+0,1,1,All Day Menu,"5,877","$43,088.72",July,
+1,1,1,Lunch Menu,213,"$2,994.75",July,
+2,1,1,Gift Card,1,$5.99,July,
+3,1,1,Open Food,3,$5.75,July,
+0,1,1,Signature Drinks,566,"$2,408.42",August,
+1,1,1,Lunch Menu,308,"$4,160.47",August,
+2,1,1,Gift Card,5,$45.00,August,
+3,1,1,All Day Menu,"7,969","$58,601.83",August,
+4,1,1,Open Food,1,$1.50,August,
+0,1,1,Lunch Menu,398,"$5,606.57",September,
+1,1,1,All Day Menu,"8,629","$66,146.96",September,
+2,1,1,Signature Drinks,779,"$3,483.07",September,
+0,1,1,,391,"$5,971.41",October,Tossed Rice Noodle
+1,1,1,,460,"$6,591.08",October,Tossed Ramen
+2,1,1,,940,"$14,097.72",October,Ramen
+3,1,1,,939,"$10,965.23",October,Fried Chicken
+4,1,1,,105,$460.01,October,Fruit Tea
+5,1,1,,492,"$6,911.21",October,Fried Rice
+6,1,1,,198,$508.54,October,Additonal
+7,1,1,,"1,241","$7,416.47",October,Appetizer
+8,1,1,,31,$153.64,October,Dessert
+9,1,1,,366,"$5,149.01",October,Lunch Special
+10,1,1,,555,"$2,527.77",October,Milk Tea
+11,1,1,,115,"$1,344.64",October,Special Offer
+12,1,1,,213,"$2,406.52",October,Wonton
+13,1,1,,"2,996","$1,820.99",October,Drink
+14,1,1,,2,$9.31,October,Open Food
+15,1,1,,12,$60.52,October,Bingsu
+16,2,1,,0,$0.00,October,Combo Items
+17,2,1,,104,$461.33,October,Jas-Lemonade
+18,2,1,,410,"$6,167.13",October,Rice Noodle
+19,2,1,,33,$184.81,October,Mai Dessert
